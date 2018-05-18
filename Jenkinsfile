@@ -9,8 +9,8 @@ pipeline {
             steps {
 		echo "Dev Build"
 		
-		$PATH = "C:/MyTools/apache-maven-3.5.3/bin:$PATH"
-		echo "PATH is: $PATH"
+		//$PATH = "C:/MyTools/apache-maven-3.5.3/bin:$PATH"
+		//echo "PATH is: $PATH"
               //  bat "mvn package -DskipTests"
 		     bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
             }
