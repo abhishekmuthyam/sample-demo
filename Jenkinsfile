@@ -4,7 +4,7 @@ pipeline {
         stage('Package') { 
             steps {
 		echo "Dev Build"
-		echo "%PATH%"
+		echo "PATH is: $PATH"
                 bat "mvn package -DskipTests" 
             }
         }
