@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Package') { 
             steps {
-		echo %PATH%
+		echo "Dev Build"
+		echo "%PATH%"
                 bat "mvn package -DskipTests" 
             }
         }
@@ -11,7 +12,7 @@ pipeline {
             steps {
                 echo 'pivotal'
                 bat "cf login -a api.run.pivotal.io -o myapplications -s dev -u abhishekmuthyam@gmail.com -p Chinna23* --skip-ssl-validation"
-		    	bat "cf push sample-demo"
+		 bat "cf push sample-demo"
             }
         }
     }
