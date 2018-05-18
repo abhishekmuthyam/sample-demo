@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Package') { 
             steps {
+		echo %PATH%
                 bat "mvn package -DskipTests" 
             }
         }
