@@ -4,6 +4,8 @@ pipeline {
         stage('Package') { 
             steps {
 		echo "Dev Build"
+		
+		PATH = "C:\MyTools\apache-maven-3.5.3\bin:$PATH"
 		echo "PATH is: $PATH"
                 bat "mvn package -DskipTests" 
             }
