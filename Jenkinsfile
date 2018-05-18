@@ -1,5 +1,9 @@
 pipeline {
     agent any
+	stage('Preparation') { 
+             
+      mvnHome = tool 'Maven 3.5.3'
+   }
     stages {
         stage('Package') { 
             steps {
@@ -7,7 +11,8 @@ pipeline {
 		
 		$PATH = "C:/MyTools/apache-maven-3.5.3/bin:$PATH"
 		echo "PATH is: $PATH"
-                bat "mvn package -DskipTests" 
+              //  bat "mvn package -DskipTests"
+		     bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
             }
         }
 	   stage('DEPLOY TO PCF') { 
