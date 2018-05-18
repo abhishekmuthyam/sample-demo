@@ -1,10 +1,10 @@
 pipeline {
     agent any
-	stage('Preparation') { 
-             
-      mvnHome = tool 'Maven 3.5.3'
-   }
+	def mvnHome
     stages {
+       stage('Preparation') {  
+        mvnHome = tool 'Maven 3.5.3'
+         }  
         stage('Package') { 
             steps {
 		echo "Dev Build"
