@@ -1,19 +1,18 @@
 pipeline {
     agent any
-   
+	tools {
+        maven 'MAVEN_HOME' 
+    }	
     stages {
-	stage ('Initialize') {
-						
-         steps {
-		withEnv(["C:/MyTools/apache-maven-3.5.3/bin"]) {
-		bat "mvn clean verify" 		  
-	       }        
-            }
+		stage ('Initialize') {
+			steps {
+                		bat 'mvn --version'
+            }			     
         }
         stage('Package') { 
             steps {
-		echo "Dev Build"
-		bat "mvn clean compile package -DskipTests"
+			echo "Dev Build"
+			bat "mvn clean compile package -DskipTests"
             }
         }
 	   stage('DEPLOY TO PCF') { 
