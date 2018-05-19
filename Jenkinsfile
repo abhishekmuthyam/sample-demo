@@ -6,6 +6,11 @@ pipeline {
 	environment {
         MAVEN_HOME = 'C:/MyTools/apache-maven-3.5.3'
     }	
+	
+	withEnv(["C:/MyTools/apache-maven-3.5.3/bin"]) {
+		bat "mvn clean verify" 		  
+	}	
+		
          steps {
                 bat '''
                   echo "MAVEN_HOME = ${MAVEN_HOME}"
