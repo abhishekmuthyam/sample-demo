@@ -1,7 +1,7 @@
 pipeline {
     agent any
    environment {
-        MAVEN_HOME = tool('MAVEN_HOME')
+        MAVEN_HOME = 'C:/MyTools/apache-maven-3.5.3/bin'
     }
     stages {
 	stage ('Initialize') {
