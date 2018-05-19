@@ -3,16 +3,11 @@ pipeline {
    
     stages {
 	stage ('Initialize') {
-	environment {
-        MAVEN_HOME = 'C:/MyTools/apache-maven-3.5.3'
-    }						
+						
          steps {
 		withEnv(["C:/MyTools/apache-maven-3.5.3/bin"]) {
 		bat "mvn clean verify" 		  
-	} 
-                bat '''
-                  echo "MAVEN_HOME = ${MAVEN_HOME}"
-                    ''' 
+	       }        
             }
         }
         stage('Package') { 
