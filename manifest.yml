@@ -4,4 +4,3 @@ applications:
   memory: 768M
   instances: 1
   random-route: true
-  buildpack: java_buildpack_offline
