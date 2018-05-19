@@ -1,12 +1,14 @@
 pipeline {
     agent any
 	tools {
-        maven 'MAVEN_HOME' 
+        maven 'MAVEN_HOME'
+	jdk 'Java'	
     }	
     stages {
 		stage ('Initialize') {
 			steps {
                 		bat 'mvn --version'
+				bat 'java --version'
             }			     
         }
         stage('Package') { 
