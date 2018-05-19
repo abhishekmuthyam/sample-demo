@@ -4,5 +4,5 @@ applications:
   memory: 768M
   instances: 1
   random-route: true
-  buildpack: java_buildpack_offline
+  buildpack: staticfile_buildpack
   path: target/sample-demo-0.0.1-SNAPSHOT.jar
