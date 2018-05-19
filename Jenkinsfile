@@ -14,7 +14,7 @@ pipeline {
         stage('Package') { 
             steps {
 		echo "Dev Build"
-		bat "mvn package -DskipTests"
+		bat "mvn clean compile package -DskipTests"
             }
         }
 	   stage('DEPLOY TO PCF') { 
