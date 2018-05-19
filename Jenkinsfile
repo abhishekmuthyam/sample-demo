@@ -4,7 +4,7 @@ pipeline {
     stages {
 	stage ('Initialize') {
 	environment {
-        MAVEN_HOME = 'C:/MyTools/apache-maven-3.5.3/bin'
+        MAVEN_HOME = 'C:/MyTools/apache-maven-3.5.3'
     }	
             steps {
                 bat '''
