@@ -1,10 +1,11 @@
 pipeline {
     agent any
-   environment {
-        MAVEN_HOME = 'C:/MyTools/apache-maven-3.5.3/bin'
-    }
+   
     stages {
 	stage ('Initialize') {
+	environment {
+        MAVEN_HOME = 'C:/MyTools/apache-maven-3.5.3/bin'
+    }	
             steps {
                 bat '''
                   echo "MAVEN_HOME = ${MAVEN_HOME}"
