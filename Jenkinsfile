@@ -8,7 +8,7 @@ pipeline {
 		stage ('Initialize') {
 			steps {
                 		bat 'mvn --version'
-				bat 'java --version'
+				
             }			     
         }
         stage('Package') { 
