@@ -3,6 +3,5 @@ applications:
 - name: sample-demo
   memory: 768M
   instances: 1
-  random-route: true
   buildpack: staticfile_buildpack
   path: target/sample-demo-0.0.1-SNAPSHOT.jar
