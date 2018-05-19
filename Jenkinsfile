@@ -1,5 +1,8 @@
 pipeline {
     agent any
+   environment {
+        MAVEN_HOME = tool('MAVEN_HOME')
+    }
     stages {
 	stage ('Initialize') {
             steps {
