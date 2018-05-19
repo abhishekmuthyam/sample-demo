@@ -1,7 +1,6 @@
 pipeline {
     agent any
    environment {
-	 echo 'tool'  
         MAVEN_HOME = tool('MAVEN_HOME')
     }
     stages {
