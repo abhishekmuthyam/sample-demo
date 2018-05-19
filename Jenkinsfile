@@ -1,8 +1,5 @@
 pipeline {
     agent any
-	tools { 
-        MAVEN_HOME 'Maven 3.5.3'
-    }
     stages {
 	stage ('Initialize') {
             steps {
