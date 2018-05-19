@@ -1,15 +1,14 @@
 pipeline {
     agent any
 	tools { 
-        MAVEN_HOME 'Maven 3.3.9'
+        MAVEN_HOME 'Maven 3.5.3'
     }
     stages {
 	stage ('Initialize') {
             steps {
                 bat '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
+                  echo "MAVEN_HOME = ${M2_HOME}"
+                    ''' 
             }
         }
         stage('Package') { 
