@@ -1,6 +1,6 @@
 ---
 applications:
 - name: sample-demo
-  memory: 768M
+  memory: 300M
   instances: 1
   path: ./target/sample-demo-0.0.1-SNAPSHOT.jar
