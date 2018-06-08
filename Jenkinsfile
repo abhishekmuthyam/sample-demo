@@ -24,5 +24,11 @@ pipeline {
 		bat "cf push sample-demo"
             }
         }
+	stage('DEPLOY TO Artifact') { 
+            steps {
+                echo 'Artifact'
+                bat "mvn deploy -DskipTests"
+            }
+        }
     }
 }
