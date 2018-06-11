@@ -24,12 +24,12 @@ pipeline {
 		bat "cf push sample-demo"
             }
         } */
-/*	stage('DEPLOY TO Artifact') { 
+	stage('DEPLOY TO Artifact') { 
             steps {
                 echo 'Deploy Artifact'
                 bat "mvn deploy -DskipTests"
             }
-        } */
+        } 
 	stage('Download Artifact') { 
             steps {
                 echo 'Download Artifact'
