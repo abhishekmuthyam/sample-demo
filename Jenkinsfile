@@ -27,6 +27,7 @@ pipeline {
 	stage('DEPLOY TO Artifact') { 
             steps {
                 echo 'Deploy Artifact'
+		bat "sed -i -e 's/0.0.1-SNAPSHOT' $WORKSPACE/pom.xml"
                 bat "mvn deploy -DskipTests"
             }
         }
