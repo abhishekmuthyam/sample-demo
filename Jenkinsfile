@@ -27,7 +27,7 @@ pipeline {
 	stage('DEPLOY to Artifactory') { 
             steps {
                 echo 'Deploy Artifact'
-                bat "mvn deploy -DskipTests -DuniqueVersion=true -Dmdep.useBaseVersion=true"
+                bat "mvn deploy -DskipTests"
             }
         } 
 	stage('Download an Artifact') { 
