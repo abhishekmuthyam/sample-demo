@@ -34,8 +34,9 @@ pipeline {
             steps {
                 echo 'Download Artifact'
                 bat "mvn dependency:get -DrepoUrl=http://localhost:8081/artifactory/libs-snapshot-local  -Dartifact=com.sample:sample-demo:0.0.1-SNAPSHOT"    
-	        bat "mvn dependency:copy -Dartifact=com.sample:sample-demo:0.0.1-SNAPSHOT  -DoutputDirectory=C:/artifactLoc -Dmdep.useBaseVersion=true"
-            } 
+	      //  bat "mvn dependency:copy -Dartifact=com.sample:sample-demo:0.0.1-SNAPSHOT  -DoutputDirectory=C:/artifactLoc -Dmdep.useBaseVersion=true"
+            	bat "-DoutputDirectory=C:/artifactLoc -Dmdep.useBaseVersion=true"
+	    } 
         }
     }
 }
