@@ -17,23 +17,24 @@ pipeline {
 			bat "mvn clean compile package -DskipTests"
             }
         }
-	   stage('DEPLOY TO PCF') { 
+	/*   stage('DEPLOY TO PCF') { 
             steps {
                 echo 'pivotal'
                 bat "cf login -a api.run.pivotal.io -o myapplications -s dev1 -u abhishekmuthyam@gmail.com -p Chinna23* --skip-ssl-validation"
 		bat "cf push sample-demo"
             }
-        }
-	stage('DEPLOY TO Artifact') { 
+        } */
+     stage('DEPLOY TO Artifact') { 
             steps {
-                echo 'Artifact'
+                echo 'Deploy Artifact'
                 bat "mvn deploy -DskipTests"
             }
         }
 	stage('Download Artifact') { 
             steps {
-                echo 'Artifact'
+                echo 'Download Artifact'
                 bat "mvn dependency:get -DrepoUrl=http://localhost:8081/artifactory/libs-snapshot-local  -Dartifact=com.sample:sample-demo:0.0.1-SNAPSHOT"
+		bat"mvn dependency:copy-dependencies -DoutputDirectory=C:/Program Files (x86)/Jenkins/workspace"
             }
         }
     }
