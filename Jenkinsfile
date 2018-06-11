@@ -24,13 +24,13 @@ pipeline {
 		bat "cf push sample-demo"
             }
         } */
-	stage('DEPLOY TO Artifact') { 
+	stage('DEPLOY to Artifactory') { 
             steps {
                 echo 'Deploy Artifact'
-                bat "mvn deploy -DskipTests -Dmdep.useBaseVersion=true"
+                bat "mvn deploy -DskipTests -DuniqueVersion=false"
             }
         } 
-	stage('Download Artifact') { 
+	stage('Download an Artifact') { 
             steps {
                 echo 'Download Artifact'
                 bat "mvn dependency:get -DrepoUrl=http://localhost:8081/artifactory/libs-snapshot-local  -Dartifact=com.sample:sample-demo:0.0.1-SNAPSHOT"
