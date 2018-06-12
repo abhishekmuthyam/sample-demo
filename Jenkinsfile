@@ -24,16 +24,17 @@ pipeline {
 		bat "cf push sample-demo"
             }
         } */
-       stage('DEPLOY to Artifactory') { 
+      /* stage('DEPLOY to Artifactory') { 
             steps {
                 echo 'Deploy Artifact'
                 bat "mvn deploy -DskipTests"
             }
-        } 
+        } */
 	stage('Download an Artifact') { 
             steps {
                 echo 'Download Artifact'
-                bat "mvn dependency:get -DrepoUrl=http://localhost:8081/artifactory/libs-snapshot-local  -Dartifact=com.sample:sample-demo:0.0.1-SNAPSHOT:jar -Dtransitive=false -Ddest=C:/artifactDownLoc"    
+		bat "mvn dependency:get -Ddest=C:/artifactDownLoc "    
+             //   bat "mvn dependency:get -DrepoUrl=http://localhost:8081/artifactory/libs-snapshot-local  -Dartifact=com.sample:sample-demo:0.0.1-SNAPSHOT:jar -Dtransitive=false -Ddest=C:/artifactDownLoc"    
 	     //  bat "mvn dependency:copy -Dartifact=com.sample:sample-demo:0.0.1-SNAPSHOT  -DoutputDirectory=C:/ArtifactDownloadLoc -Dmdep.useBaseVersion=true"
             	
 	    } 
