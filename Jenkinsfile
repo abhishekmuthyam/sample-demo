@@ -11,12 +11,12 @@ pipeline {
 				
             }			     
         }
-        stage('Package') { 
+      /*  stage('Package') { 
             steps {
 			echo "Dev Build"
 			bat "mvn clean compile package -DskipTests"
             }
-        }
+        }*/
 	/*   stage('DEPLOY TO PCF') { 
             steps {
                 echo 'pivotal'
