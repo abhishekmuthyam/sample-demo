@@ -33,7 +33,7 @@ pipeline {
 	stage('Download an Artifact') { 
             steps {
                 echo 'Download Artifact'
-                bat "mvn dependency:get -DrepoUrl=http://localhost:8081/artifactory/libs-snapshot-local  -Dartifact=com.sample:sample-demo:0.0.1-SNAPSHOT:jar -Dtransitive=false -Ddest=sample-demo.jar"    
+                bat "mvn dependency:get -DrepoUrl=http://localhost:8081/artifactory/libs-snapshot-local  -Dartifact=com.sample:sample-demo:0.0.1-SNAPSHOT:jar -Dtransitive=false -Ddest=sample-demo.jar -Dfile=C:/artifactDownLoc"    
 	       bat "mvn dependency:copy -Dartifact=com.sample:sample-demo:0.0.1-SNAPSHOT  -DoutputDirectory=C:/ArtifactDownloadLoc -Dmdep.useBaseVersion=true"
             	
 	    } 
