@@ -4,13 +4,13 @@ pipeline {
         maven 'MAVEN_HOME'
 	jdk 'Java'	
     }	
-    stages {
+   /* stages {
 		stage ('Initialize') {
 			steps {
                 		bat 'mvn --version'
 				
             }			     
-        }
+        }*/
       /*  stage('Package') { 
             steps {
 			echo "Dev Build"
