@@ -4,8 +4,8 @@ pipeline {
         maven 'MAVEN_HOME'
 	jdk 'Java'	
     }	
-   /* stages {
-		stage ('Initialize') {
+    stages {
+	/*stage ('Initialize') {
 			steps {
                 		bat 'mvn --version'
 				
