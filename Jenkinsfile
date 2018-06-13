@@ -30,11 +30,11 @@ pipeline {
                 bat "mvn deploy -DskipTests"
             }
         } 
-	/*stage('Download an Artifact') { 
+    stage('Download an Artifact') { 
             steps {
                 echo 'Download Artifact'
                 bat "mvn dependency:get -DrepoUrl=http://localhost:8081/artifactory/libs-snapshot-local -Dartifact=com.sample:sample-demo:0.0.1-SNAPSHOT:jar -Dtransitive=false -Ddest=C:/artifactDownLoc"            	
 	    } 
-        }*/
+        }
     }
 }
