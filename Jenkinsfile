@@ -20,7 +20,7 @@ pipeline {
 	/*   stage('DEPLOY TO PCF') { 
             steps {
                 echo 'pivotal'
-                bat "cf login -a api.run.pivotal.io -o myapplications -s dev1 -u abhishekmuthyam@gmail.com -p Chinna23* --skip-ssl-validation"
+                bat "cf login -a api.run.pivotal.io -o myapplications -s dev1 -u xxxxxxxxxx@gmail.com -p xxxxxxx --skip-ssl-validation"
 		bat "cf push sample-demo"
             }
         } */
